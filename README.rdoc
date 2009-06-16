@@ -4,7 +4,7 @@ Ever wondered how to get colors on your terminal? Now you can and ever so easily
 
 First, gotta thank the Passenger folks for the initial implementation of the brilliant idea.
 
-## Usage
+h3. Usage
   require "colors"
   
   Colors.process("<red>Text</red>")
@@ -19,7 +19,7 @@ Finally, you can bold your text with <b>, for instance:
   
   Colors.process("<b>BOLD</b>")
 
-## Terminal color explanation
+h3. Terminal color explanation
 
 Non-printing escape sequences have to be enclosed in \[\033[ and \]. For colour escape sequences, they should also be followed by a lowercase m.
 
