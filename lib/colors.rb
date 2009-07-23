@@ -4,8 +4,22 @@ class Colors
     def default_terminal_colors
       @default_terminal_colors ||= "\e[0m\e[37m\e[40m"
     end
-
-    def process(data)	
+    
+    def process(data)
+      begin
+        _process(data)
+      ensure
+        STDOUT.flush
+        reset!
+      end      
+    end
+    
+    def reset!
+      STDOUT.write("\e[0m")
+  		STDOUT.flush
+    end
+    
+    def _process(data)	
       # Backrounds
       if m = data.match(%r{<(.*?) bg=(.*?)>(.*?)<\/(.*?)>}m)
         colors = {:red => 1, :green => 2, :yellow => 3, :blue => 4, :purple => 5, :sea => 6, :white => 7}
