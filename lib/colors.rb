@@ -16,7 +16,7 @@ class Colors
     
     def reset!
       STDOUT.write("\e[0m")
-  		STDOUT.flush
+      STDOUT.flush
     end
     
     def _process(data)	
